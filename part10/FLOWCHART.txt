@@ -1,0 +1,27 @@
+START
+   ↓
+AT ──> OK
+   ↓
+AT+CSQ ──> +CSQ: 21,0 ──> OK
+   ↓
+AT+CMGF=1 ──> OK
+   ↓
+AT+CMGS="123456789"
+   ↓
+  > HELLO (typed)
+   ↓
+  Ctrl+Z sent
+   ↓
++CMGS: 1
+OK
+   ↓
+AT+CMGR=1
+   ↓
+ERROR (No message found / not readable)
+   ↓
+AT+CMGF=1
+OK
+   ↓
+(Ctrl+C to cancel)
+   ↓
+END
