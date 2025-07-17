@@ -1,0 +1,21 @@
+1. Typo in command
+AT+XYZ
+Expected Response: +CME ERROR: operation not supported
+Interpretation: The command XYZ is not recognized by the module.
+
+2. Unsupported parameter
+AT+CSQ=5
+Expected Response: +CME ERROR: operation not allowed
+Interpretation: AT+CSQ is read-only; you can’t assign a value.
+
+3. SIM not inserted (optional test)
+Remove SIM and try:
+AT+CPIN?
+Expected Response:+CME ERROR: SIM not inserted
+Interpretation: No SIM detected in the module.
+
+4. Invalid format
+AT+CMGF=xyz
+Expected Response: +CME ERROR: invalid input value
+Interpretation: The argument must be numeric (0 or 1), not text.
+
