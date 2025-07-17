@@ -1,0 +1,42 @@
+1. AT+CWESIM? – eSIM Status Query
+Checks the status of the integrated Cavli eSIM (if present), including profile activation state.
+
+AT+CWESIM?
+Mock response:
++CWESIM: 1,"ENABLED","PROFILE_ACTIVE","HUBBLE_REGISTERED"
+OK
+Intepretation:
+
+1 → eSIM slot number
+ENABLED → eSIM functional
+PROFILE_ACTIVE → SIM profile loaded
+HUBBLE_REGISTERED → Connected to Cavli Hubble platform
+
+2. AT+CGNSSFIX? – GNSS Current Fix Status
+Returns current GNSS positioning data and fix status using built-in GNSS.
+
+AT+CGNSSFIX?
+Mock response:
++CGNSSFIX: 0,17:35:12,28.6139,77.2090,25,8,1.2
+OK
+Interpretation:
+
+0 → Fix type (0 = 3D fix)
+17:35:12 → UTC timestamp
+28.6139,77.2090 → Latitude, Longitude
+25 → Altitude (meters)
+8 → Number of satellites in view
+1.2 → HDOP (horizontal dilution)
+
+3. AT+HBLINFO – Hubble Device Info
+Retrieves Cavli Hubble device registration and connection details.
+
+AT+HBLINFO
+Mock response:
++HBLINFO: "DEVICE12345","PSK-ABCD1234","MQTT_CONNECTED"
+OK
+Interpretation:
+
+"DEVICE12345" → Device ID assigned by Hubble
+"PSK-ABCD1234" → Pre‑shared key for authentication
+MQTT_CONNECTED → Shows cloud link is live via MQTT
